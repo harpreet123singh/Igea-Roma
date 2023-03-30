@@ -1,39 +1,66 @@
+<html>
+<head>
+
+<script type="text/javascript" language="javascript">
+    function validaLogin() { 
+        if (document.registro.email.value == "" && document.registro.password.value=="") {
+            alert("Inserire email e password");
+            return false;
+        }
+        if (document.registro.email.value == "") {
+            alert("Inserire email");
+            return false;
+        }
+        if (document.registro.password.value == "") {
+            alert("Inserire password");
+            return false;
+        }
+        alert("Dati inseriti correttamente");
+        return true;
+    }
+
+</script>
+</head>
+
+<body>
 <section>
-  <header>
-    <link rel="stylesheet" href="igeaproject.css">
-    <nav>
-      <ul>
-        <li><a href="scheletro.html">Home</a></li>
-        <li><a href="igeaproject.html">Igea Project</a></li>
-          <label for="segnalazioni">Segnalazioni</label>
-          <select id="segnalazioni">
-            <option href="segnala.html">Segnala</option>
-            <option href="cerca.html">Cerca</option>
-            
-          </select>
-        <li><a href="volontario.html">Diventa Volontario</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
-    </nav>
-    
-        
-  </header>
+    <header>
+        <link rel="stylesheet" href="igeaproject.css">
+        <nav>
+            <ul>
+                <li><a href="scheletro.html">Home</a></li>
+                <li><a href="igeaproject.html">Igea Project</a></li>
+                <label for="segnalazioni">Segnalazioni</label>
+                <select id="segnalazioni">
+                    <option href="segnala.html">Segnala</option>
+                    <option href="cerca.html">Cerca</option>
+
+                </select>
+                <li><a href="volontario.html">Diventa Volontario</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+
+
+    </header>
     <h2>Login</h2>
-    <form>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-  
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
-  
-      <button type="submit">Accedi</button>
+    <form method="post" action="" name="registro" >
+
+        <label for="email">email:</label>
+        <input type="email" id="email" name="email" size="40" maxlength="40">
+
+        <label for="password">password:</label>
+        <input type="password" id="password" name="password" size="40" maxlength="40">
+
+        <button type="submit" onclick="validaLogin()"> Accedi</button>
     </form>
-  </section>
-   
-  <footer>
+</section>
+
+<footer>
     <ul>
-      <li>Sede: Via istituto luce 123, Roma</li>
-      <li>Contatti: info@segnalazioniemerg
-  <footer>
-</body>
-</html>
+        <li>Sede: Via istituto luce 123, Roma</li>
+        <li>
+            Contatti: info@segnalazioniemerg
+            </footer>
+                </body>
+                </html>

@@ -1,69 +1,118 @@
-<section>
-  <header>
-    <link rel="stylesheet" href="igeaproject.css">
-    <nav>
-      <ul>
-        <li><a href="scheletro.html">Home</a></li>
-        <li><a href="igeaproject.html">Igea Project</a></li>
-        <li>
-          <label for="segnalazioni">Segnalazioni</label>
-          <select id="segnalazioni">
-            <option href="segnala.html">Segnala</option>
-            <option href="cerca.html">Cerca</option>
-            
-          </select>
-        </li>
-        <li><a href="volontario.html">Diventa Volontario</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
-    </nav>
-    
-        
-  </header>
-    
-    <h2>Diventa un volontario</h2>
-    <p>Se vuoi diventare un volontario e aiutare a gestire le emergenze a Roma, compila il modulo qui sotto:</p>
-    <form action="registrazione.php" method="post"></form>
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" required>
-  
-      <label for="cognome">Cognome:</label>
-      <input type="text" id="cognome" name="cognome" required>
-  
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-  
-      <label for="telefono">Telefono:</label>
-      <input type="tel" id="telefono" name="telefono" required>
-  
-      <label for="indirizzo">Indirizzo:</label>
-      <input type="text" id="indirizzo" name="indirizzo" required>
-      
-      <label for="via">Via/Piazza:</label>
-      <input type="text" id="via" name="via" required>
-      
-      <label for="cap">CAP:</label>
-      <input type="text" id="cap" name="cap" required>
-  
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
-  
-      <label for="conferma_password">Conferma password:</label>
-      <input type="password" id="conferma_password" name="conferma_password" required>
-  
-      <label for="disponibilita">Disponibilità settimanale:</label>
-      <input type="number" id="disponibilita" name="disponibilita" min="1" max="7" required>
-  
-      <button type="submit">Invia richiesta</button>
-    </form>
-</section>
+<html>
+<head>
 
- 
-<footer>
-  <ul>
-    <li>Sede: Via istituto luce 123, Roma</li>
-    <li>Contatti: info@segnalazioniemerg
-<footer>
+    <script type="text/javascript" language="javascript">
+        var uno = true;
+        var due = true;
+        function validaRegistrazione() {
+            var giusto = true;
+            for (var i = 0; i < (document.registrazione.length) - 1; i++) {
+                var x = document.registrazione.elements[i];
+                if (x.value == "") {
+                    giusto = false;
+                    alert("Riempire campo: " + x.name);
+                }
+            }
+            if (giusto == true && uno==true && due==true) {
+                alert("Dati inseriti correttamente");
+            }
+            return true;
+        }
+        function controlloTel() {
+            if (document.registrazione.telefono.value.length != 10) {
+                alert("Il numero di telefono deve contenere 10 cifre");
+                uno = false;
+                return false;
+            }
+            uno = true;
+            return true;
+        }
+        function controlloCAP() {
+            var c = parseInt(document.registrazione.cap.value);
+            if (document.registrazione.cap.value.length != 5) {
+                alert("Il CAP deve contenere 5 cifre");
+                due = false;
+                return false;
+            }
+            if (c<=118 || c>= 199) {
+                alert("Il CAP deve essere compreso tra 00118 e 00199");
+                due = false;
+                return false;
+            }
+            due = true;
+            return true;
+        }
+
+    </script>
+</head>
+
+<body>
+    <section>
+        <header>
+            <link rel="stylesheet" href="igeaproject.css">
+            <nav>
+                <ul>
+                    <li><a href="scheletro.html">Home</a></li>
+                    <li><a href="igeaproject.html">Igea Project</a></li>
+                    <li>
+                        <label for="segnalazioni">Segnalazioni</label>
+                        <select id="segnalazioni">
+                            <option href="segnala.html">Segnala</option>
+                            <option href="cerca.html">Cerca</option>
+
+                        </select>
+                    </li>
+                    <li><a href="volontario.html">Diventa Volontario</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+
+
+        </header>
+
+        <h2>Diventa un volontario</h2>
+        <p>Se vuoi diventare un volontario e aiutare a gestire le emergenze a Roma, compila il modulo qui sotto:</p>
+        <form action="registrazione.php" method="post" name="registrazione">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="cognome">Cognome:</label>
+            <input type="text" id="cognome" name="cognome" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telefono">Telefono:</label>
+            <input type="number" id="telefono" name="telefono" onChange="return controlloTel();">
+
+            <label for="indirizzo">Indirizzo:</label>
+            <input type="text" id="indirizzo" name="indirizzo" required>
+
+            <label for="via">Via/Piazza:</label>
+            <input type="text" id="via" name="via" required>
+
+            <label for="cap">CAP:</label>
+            <input type="number" id="cap" name="cap" pattern="[0-9]{5}" minlength="5" maxlength="5" onChange="return controlloCAP();">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="conferma_password">Conferma password:</label>
+            <input type="password" id="conferma_password" name="conferma_password" required>
+
+            <label for="disponibilita">Disponibilità settimanale:</label>
+            <input type="number" id="disponibilita" name="disponibilita" min="1" max="7" required>
+
+            <button type="submit" onclick="validaRegistrazione()"> Invia richiesta</button>
+        </form>
+    </section>
+
+    <footer>
+        <ul>
+            <li>Sede: Via istituto luce 123, Roma</li>
+            <li>
+                Contatti: info@segnalazioniemerg
+    </footer>
 </body>
 </html>
   
