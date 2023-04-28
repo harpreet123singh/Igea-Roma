@@ -1,0 +1,21 @@
+.navbar{
+    min-height: 10vh;
+    background: rgb(209,255,205);
+    background: linear-gradient(0deg, rgba(209,255,205,1) 0%, rgba(255,255,255,1) 100%, rgba(0,212,255,1) 100%);
+}
+
+.dropdown-item:hover {
+    color: black;
+    background: #d1ffcd;
+}
+
+.nav-link.active{
+    color: darkgreen;
+    font-weight: 500;
+}
+
+.navbar-brand{
+    color: #244244;
+    font-weight: 700;
+    font-size: large;
+}
