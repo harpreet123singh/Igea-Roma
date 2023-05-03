@@ -1,0 +1,204 @@
+body{
+    background-image: url("./src/map.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: none;
+    background-size: cover;
+    backdrop-filter: blur(.2em);
+
+}
+.card {
+    width: 50%;
+    text-align: center; 
+    align-content: center;
+    margin: 5em auto;
+    background-color: #ffffff6e;
+    border-width: .5em;
+    border-color: #ffffff;
+}
+.intestazione {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10%;
+    margin: 2em 0;
+}
+.userPresentation {
+    text-align: left;
+}
+.userPic {
+    width: 10em;
+    height: 10em;
+    background-image: url("./src/map.jpg");
+    background-position: center;
+    background-repeat: none;
+    background-size: cover;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+.userPic_hover{
+    width: inherit;
+    height: inherit;
+    background-color: rgba(0, 0, 0, 0.611);
+    color: white;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-style: normal;
+    font-weight: 1000;
+    border-radius: 50%;
+    opacity: 0%;
+}
+
+.userPic_hover a{
+    width: inherit;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.userPic:hover > .userPic_hover{
+    animation-name: unFade;
+    animation-duration: .5s;
+    opacity: 100;
+}
+:not(.userPic:hover) > .userPic_hover{
+    animation-name: fade;
+    animation-duration: .5s;
+    opacity: 0;
+}
+.card-body {
+    text-align: center;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+.form-control{
+    width: 50%;    
+    margin-left: 1em;
+    margin-right: 1em;
+}
+.form-control:disabled{
+    color: black;
+    background-color: transparent;
+    border-color: transparent;
+}
+.form-check-input{
+    margin-left: 1em;
+    margin-right: 1em;
+    --bs-form-check-bg: var(--bs-body-bg);
+}
+.form-check-input:disabled{
+    opacity: 100;
+}
+.form-check-input:focus{
+    margin-left: 1em;
+    margin-right: 1em;
+    background-color: #10bb00;
+    border-color: #10bb00;
+    box-shadow: 0 0 0 0.25rem #10bb0057;
+}
+.form-check-input:checked{
+    background-color: #10bb00;
+    border-color: #10bb00;
+}
+.form-control:focus:invalid {
+    border-color: #8d0000;
+    box-shadow: 0 0 0 0.25rem #81000057;
+}
+.form-control:focus:valid {
+    border-color: #10bb00;
+    box-shadow: 0 0 0 0.25rem #10bb0057;
+}
+.inlineInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: right;
+    margin-bottom: 1em;
+    justify-content: center;
+}
+.inlineInfo:hover{
+    background-color: #ffffff30;
+}
+.alter_btn{
+    width: 1.5em;
+    height: 1.5em;
+    background-color: transparent;
+    font-size: medium;
+    border: none;
+    display: none;
+}
+.inlineInfo:hover > .alter_btn{
+    display: block;
+}
+.btn.btn-primary{
+    font-size: large;
+    --bs-btn-hover-bg: #244244;
+    --bs-btn-border-color: transparent;
+    --bs-btn-hover-border-color: #244244;
+    --bs-btn-bg: #0c8d00;
+    --bs-btn-active-bg: #244244;
+    margin: 0 2em
+}
+.btn.disabled, .btn:disabled, fieldset:disabled .btn{
+    background-color: #4d4d4d;
+    border-color: #4d4d4d;
+}
+.segnalazionioptions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+.segnalazioniopt{
+    width: 20em;
+    height: 20em;
+    background-image: url("./src/volontariobg.jpg");
+    background-position: center;
+    background-repeat: none;
+    background-size: cover;
+    border-width: .5em;
+    border-color: #ffffff;
+}
+
+.segnalazioniopt_hover{
+    width: inherit;
+    height: inherit;
+    background-color: rgba(0, 0, 0, 0.611);
+    color: white;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-style: normal;
+    font-weight: 1000;
+    opacity: 0%;
+}
+
+.segnalazioniopt_hover a{
+    width: inherit;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.segnalazioniopt:hover > .segnalazioniopt_hover{
+    animation-name: unFade;
+    animation-duration: .5s;
+    opacity: 100;
+}
+
+@keyframes unFade{
+    from{opacity: 0;}
+    to{opacity: 100;}
+}
+
+:not(.segnalazioniopt:hover) > .segnalazioniopt_hover{
+    animation-name: fade;
+    animation-duration: .5s;
+    opacity: 0;
+}
+
+@keyframes fade{
+    from{opacity: 100;}
+    to{opacity: 0;}
+}

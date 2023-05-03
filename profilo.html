@@ -1,0 +1,161 @@
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="profilo.css">
+    <script src="profilo.js"></script>
+</head>
+
+<body>
+    <header>
+        <link rel="stylesheet" href="igeaproject.css">
+        <nav class="navbar bg-body-tertiary" id="igea-navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                <img src="./src/Igea_Project_2.png" alt="Logo" width="75" height="75" class="d-inline-block align-text-center">
+                <b>Igea Project - Roma</b>
+                </a>
+                <button class="navbar-toggler" id="navbar-toggler-controller" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown"><!--class="collapse navbar-collapse"-->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">La nostra Visione</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Segnalazioni
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Segnala</a></li>
+                        <li><a class="dropdown-item" href="#">Cerca</a></li>
+                    </ul>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: green">Diventa Volontario</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: green">Login</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            </nav>
+    </header>
+
+    <div class="card">
+        <div class="card-body">
+                <div class="intestazione">
+                    <div class="userPic" style="background-image: url('./src/volontario/default.png');">
+                        <div class="userPic_hover">
+                            <a href="#"><h1 style="font-weight: 1000;">+</h1></a>
+                        </div>
+                    </div>
+                    <div class="userPresentation">
+                        <h1 id="name">
+                            Matteo Ciuffreda
+                        </h1>
+                        <p id="iscription">
+                            Data iscrizione: 03/05/2023
+                        </p>
+                    </div>
+                </div>
+                <hr>
+                <br>
+                <div class="informazioni">
+                    <h2><em><b>Informazioni</b><em></h2>
+                    <br>
+                    <div class="inlineInfo">
+                        <label for="birthday">Data di nascita: </label>
+                        <input id="birthday" data-prev="psw" name="birthday" class="form-control" type="text" disabled>
+                        <button id="alter_birthday" class="alter_btn" onclick="alterInfo(event)">&#9998;</button>
+                    </div>
+
+                    <div class="inlineInfo">
+                        <label for="sex">Sesso: </label>
+                        <input id="sex" data-prev="psw" name="sex" class="form-control" type="text" disabled>
+                        <button id="alter_sex" class="alter_btn" onclick="alterInfo(event)">&#9998;</button>
+                    </div>  
+
+                    <div class="inlineInfo">
+                        <label for="address">Indirizzo: </label>
+                        <input id="address" data-prev="psw" name="address" class="form-control" type="text" style="width: 60%" disabled>
+
+                        <label for="cap">CAP: </label>
+                        <input id="cap" data-prev="psw" name="cap" class="form-control" type="text" style="width: 12%" pattern="^0{2}1{1}(?:1{1}[8-9]{1}|[2-9]{1}[0-9]{1})$" minlength="5" maxlength="5" required disabled>
+                        <button id="alter_address" class="alter_btn" onclick="alterInfo(event)">&#9998;</button>
+                    </div>
+
+                    <div class="inlineInfo">
+                        <label for="tel">Telefono: </label>
+                        <input id="tel" data-prev="psw" name="tel" class="form-control" type="text" required pattern="(?:\+[3]{1}[9]{1})?(\s|\W)?[0-9]{3}(\s|\W)?[0-9]{3}(\s|\W)?[0-9]{4}" disabled>
+                        <button id="alter_tel" class="alter_btn" onclick="alterInfo(event)">&#9998;</button>
+                    </div>
+
+                    <div class="inlineInfo">
+                        <label for="drive">Patente: </label>
+                        <input id="drive" data-prev="psw" name="drive" class="form-check-input" type="checkbox" disabled>
+                        <button id="alter_drive" class="alter_btn" onclick="alterInfo(event)">&#9998;</button>
+                    </div>
+
+                    <div class="inlineInfo">
+                        <label for="description">Descrizione: </label>
+                        <input id="description" data-prev="psw" name="description" class="form-control" type="text" disabled>
+                        <button id="alter_description" class="alter_btn" onclick="alterInfo(event)">&#9998;</button>
+                    </div>
+
+                    <div class="inlineInfo">
+                        <label for="email">Email: </label>
+                        <input id="email" data-prev="psw" name="email" class="form-control" type="email" disabled value="mlancia17@gmail.com">
+                    </div>
+
+                    <div class="inlineInfo">
+                        <label for="password">Password: </label>
+                        <input id="password" data-prev="psw" name="password" class="form-control" type="password" disabled>
+                        <button id="alter_password" class="alter_btn" onclick="alterInfo(event)">&#9998;</button>
+                    </div>
+
+                    <div class="inlineInfo">
+                        <button id="alter_save" class="btn btn-primary" onclick="alterInfo(event)" disabled>Salva</button>
+                        <button id="alter_cancel" class="btn btn-primary" onclick="alterInfo(event)" disabled>Annulla</button>
+                    </div>
+
+                </div>
+                <br>
+                <hr>
+                <br>
+                <div class="segnalazioni">
+                    <h2><em><b>Segnalazioni</b><em></h2>
+                    <br>
+                    <div class="segnalazionioptions">
+                        <div class="segnalazioniopt"  style="background-image: url('./src/alertCover.jpg');">
+                            <div class="segnalazioniopt_hover">
+                                <a href="#"><h2>Le tue</h2><h1 style="font-weight: 1000;">Segnalazioni &rarr;</h1></a>
+                            </div>
+                        </div>
+
+                        <div class="segnalazioniopt" style="background-image: url('./src/segnalazioneCover.jpg');">
+                            <div class="segnalazioniopt_hover">
+                                <a href="#"><h2>I tuoi</h2><h1 style="font-weight: 1000;">Impegni &rarr;</h1></a> 
+                            </div>
+                        </div>
+
+                        <div class="segnalazioniopt" style="background-image: url('./src/magistraCover.jpg');">
+                            <div class="segnalazioniopt_hover">
+                                <a href="#"><h2>Le tue iscrizioni alle</h2><h1 style="font-weight: 1000;">Iniziative &rarr;</h1></a>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+
+
+
+
+</body>
+</html>
