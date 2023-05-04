@@ -1,16 +1,18 @@
-<html>
+<html> 
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="profilo.css">
+    <link rel="stylesheet" href="footer.css">
     <script src="profilo.js"></script>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 </head>
 
 <body>
     <header>
         <link rel="stylesheet" href="igeaproject.css">
-        <nav class="navbar bg-body-tertiary" id="igea-navbar">
+        <nav class="navbar navbar-expand-lg" id="igea-navbar">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
                 <img src="./src/Igea_Project_2.png" alt="Logo" width="75" height="75" class="d-inline-block align-text-center">
@@ -53,7 +55,8 @@
                 <div class="intestazione">
                     <div class="userPic" style="background-image: url('./src/volontario/default.png');">
                         <div class="userPic_hover">
-                            <a href="#"><h1 style="font-weight: 1000;">+</h1></a>
+                            <label for="userPic_img">+</label>
+                            <input type="file" id="userPic_img" style="display: none">
                         </div>
                     </div>
                     <div class="userPresentation">
@@ -153,6 +156,32 @@
                     </div>
                     <br>
                 </div>
+            </div>
+    </div>
+    
+    <footer>
+        <link rel="stylesheet" href="footer.css">
+        <div class="contatti">
+            <li>Sede: Edificio Marco Polo, Viale dello Scalo S. Lorenzo, 82, 00159 Roma RM</li>
+            <li>Contatti: info@IgeaProject.it </li>
+            <li>Telefono: +39 351 8460 117</li>
+            <div class="maps">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6590.090684370046!2d12.512784856037571!3d41.90014442559066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6184e01c3111%3A0x4bec550a1e258da0!2sDipartimento%20ISO%20-%20Sapienza%20Universit%C3%A0%20di%20Roma!5e0!3m2!1sit!2sit!4v1683116438927!5m2!1sit!2sit" width="inherit" height="inherit" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            </div>
+        </div >
+    
+        <div class="social">
+        <p>Scoprici sui social: </p>
+            <div class="socialLink">
+            <img class="socialPic" src="./src/instalogo.jpg" onclick="" >
+            <img class="socialPic" src="./src/Facebook_logo.jpg" onclick="" >
+            <img class="socialPic" src="./src/tiktok_logo.jpg" onclick="" >
+            </div>
+    
+        </div>
+        </footer>
+
 
 
 

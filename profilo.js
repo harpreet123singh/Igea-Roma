@@ -23,3 +23,17 @@ function alterInfo(event){
         //Iniziare richiesta php
     }
 }
+
+document.onload(function(){
+    document.getElementById('userPic_img').addEventListener('change', function(){
+        /*TOCCA FALLO IN PHP
+        new_pic = document.getElementById('userPic_img').files[0];
+        url = window.URL.createObjectURL(new_pic);
+        var a = document.createElement("a");
+        a.href = './src/volontario/'+url;
+        a.download = "demo.txt";
+        a.click();
+        window.URL.revokeObjectURL(url);
+        document.removeChild(a);*/
+    })
+})

@@ -1,0 +1,36 @@
+body{
+    background-image: url("./src/volontariobg.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: none;
+    background-size: cover;
+    backdrop-filter: blur(.2em);
+}
+.card{
+    width: 25%;
+    text-align: center; 
+    align-content: center;
+    margin: 5em auto;
+    background-color: #ffffff6e;
+    border-width: .5em;
+    border-color: #ffffff;
+}
+#cap-div {
+    background: #ffffff;
+    border-radius: .4em;
+    width: fit-content;
+    box-shadow: .2em .2em 4px rgb(41, 41, 41);
+}
+.form-control:focus {
+    border-color: #10bb00;
+    box-shadow: 0 0 0 0.25rem #10bb0057;
+}
+.form-control:invalid {
+    border-color: #8d0000;
+    box-shadow: 0 0 0 0.25rem #81000057;
+}
+.btn.btn-outline-secondary {
+    --bs-btn-hover-bg: #0c8d00;
+    --bs-btn-border-color: transparent;
+    --bs-btn-active-bg: #244244;
+}

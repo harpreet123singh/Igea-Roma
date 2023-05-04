@@ -1,77 +1,182 @@
-<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="navbar.css">
+    <link href="./collettivi.css" rel="stylesheet">
+    <link href="./footer.css" rel="stylesheet">
+    <script src="collettivi.js"></script>
 
-<header>
-    <nav>
-      <ul>
-        <li><a href="scheletro.html">Home</a></li>
-        <li><a href="igeaproject.html">Igea Project</a></li>
-        <li>
-          <label for="segnalazioni">Segnalazioni</label>
-          <select id="segnalazioni">
-            <option href="segnala.html">Segnala</option>
-            <option href="cerca.html">Cerca</option>
-            </select>
-        </li>
-        <li><a href="volontario.html">Diventa Volontario</a></li>
-        <li><a href="collettivi.html">collettivi</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
-    </nav>
- </header>
+</head>
+<body style="background-image: url('./src/panorama.jpg');">
+    <header>
+        <link rel="stylesheet" href="igeaproject.css">
+        <nav class="navbar navbar-expand-lg" id="igea-navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                <img src="./src/Igea_Project_2.png" alt="Logo" width="75" height="75" class="d-inline-block align-text-center">
+                <b>Igea Project - Roma</b>
+                </a>
+                <button class="navbar-toggler" id="navbar-toggler-controller" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown"><!--class="collapse navbar-collapse"-->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">La nostra Visione</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Segnalazioni
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Segnala</a></li>
+                        <li><a class="dropdown-item" href="#">Cerca</a></li>
+                    </ul>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: green">Diventa Volontario</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: green">Login</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            </nav>
+    </header>
 
 
  <body>
-     <h1>Scopri i collettivi nelle tue vicinanze</h1>
- 
-     <form>
-         <label for="search">Cerca collettivo:</label>
-         <input type="text" id="search" name="search">
-         <label for="filter">Filtra per:</label>
-         <select id="filter" name="filter">
-             <option value="name">Nome</option>
-             <option value="cap">CAP</option>
-         </select>
-         <button type="submit">Cerca</button>
-     </form>
- 
-     <h2>Lista di collettivi</h2>
-     <ul>
-      <div class="results">
-        <div class="result">
-          <img src="image1.jpg" alt="Immagine 1">
-          <h2>Titolo del primo risultato</h2>
-          <p>Breve descrizione del primo collettivo</p>
-          <a href="dettaglio1.html" class="button">Dettaglio</a>
+    <br>
+    <div style="display: flex; align-items: center; flex-direction: column;">
+        <h1>Scopri i collettivi nelle tue vicinanze</h1>
+        <div id="cap-div" class="input-group mb-3">
+            <input type="text" id="filter-input-cap" autocomplete="off" pattern="0{2}1{1}([1-9]{1}[8-9]{1}|[2-9]{1}[0-9]{1})" class="form-control" placeholder="Digita Cap" aria-label="Seleziona" style="display: block;" data-toggle="tooltip">
+            <button class="btn btn-outline-secondary" id="filterButton" onclick="launchSettings()">Cerca</button>
         </div>
-        <div class="result">
-          <img src="image2.jpg" alt="Immagine 2">
-          <h2>Titolo del secondo risultato</h2>
-          <p>Breve descrizione del secondo collettivo</p>
-          <a href="dettaglio2.html" class="button">Dettaglio</a>
+        <div id="resultNavigation_DIV">
+            <nav aria-label="Page navigation example" id="resultNavigation">
+              <ul class="pagination" id="resultNavigation_ul">
+                <li class="page-item" id="page-item-0" onclick="managePage(event)">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li class="page-item active" id="page-item-1" onclick="managePage(event)"><a class="page-link" href="#">1</a></li>
+                <li class="page-item" id="page-item-2" onclick="managePage(event)"><a class="page-link" href="#">2</a></li>
+                <li class="page-item" id="page-item-3" onclick="managePage(event)"><a class="page-link" href="#">3</a></li>
+                <li class="page-item" id="page-item-4" onclick="managePage(event)">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
         </div>
-        <div class="result">
-          <img src="image3.jpg" alt="Immagine 3">
-          <h2>Titolo del terzo risultato</h2>
-          <p>Breve descrizione del terzo collettivo</p>
-          <a href="dettaglio3.html" class="button">Dettaglio</a>
+    </div>
+    <div id="results">
+        <br>
+        <em><h3 class="offcanvas-title" id="resultNavigation_resultSummary">Risultati: </h3></em>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="results">
+                    <div class="result">
+                        <img src="image1.jpg" alt="Immagine 1">
+                        <h2>Titolo del primo risultato</h2>
+                        <p>Breve descrizione del primo collettivo</p>
+                        <a href="dettaglio1.html" class="button">Dettaglio</a>
+                    </div>
+                </div>
+            </div>
         </div>
-     </ul>
- 
-     <section>
-         <h2>Links utili</h2>
-         <ul>
-             <li><a href="collettiviproponi.html">Proponi un nuovo collettivo</a></li>
-             <li><a href="collettivilogin.html">Accedi come amministratore</a></li>
-         </ul>
-     </section>
- </body>
- 
- 
- <body>
- <footer>
-    <ul>
-      <li>Sede: Via istituto luce 123, Roma</li>
-      <li>Contatti: info@segnalazioniemerg
-  <footer>
+
+        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="staticBackdrop" aria-labelledby="offcanvasWithBothOptionsRightLabel">
+            <div class="offcanvas-header">
+            <h3 class="offcanvas-title" id="staticBackdropLabel">Scheda Completa</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" id="full-card-close"></button>
+            </div>
+            <div class="offcanvas-body">
+            <!-- Now Contents-->
+            <div class="card incanvas-card" id="">
+                <div class="card-img-top-container">
+                <img src="./src/cardDefaultIcon_2.jpg" class="card-img-top" alt="Foto Segnalazione">
+                </div>
+                <div class="card-body">
+                <h4 class="card-title" id="card-text-title">Titolo Segnalazione</h4>
+                <ul>
+                    <li id="card-text-date">
+                    <b>Data Pubblicazione: </b>
+                    </li>
+                    <li id="card-text-where">
+                    <b>Indirizzo: </b>
+                    </li>
+                    <li id="card-text-type">
+                    <b>Tipologia: </b>
+                    </li>
+                    <li id="card-text-gravity">
+                    <b>Indice di Gravit&agrave;: </b>
+                    </li>
+                </ul>
+                <p class="card-text" id="card-text-description">
+                    <b>Descrizione</b><br>
+                    Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <p class="card-text" id="card-text-description">
+                    <b>Immagini</b>
+                </p>
+                <div id="carouselExampleRide" class="carousel slide" data-ride="carousel" data-bs-ride="true" id="card-images">
+                    <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./src/cardDefaultIcon_2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./src/cardDefaultIcon.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+                    Toggle static offcanvas
+                </button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+    <footer>
+        <link rel="stylesheet" href="footer.css">
+        <div class="contatti">
+          <li>Sede: Edificio Marco Polo, Viale dello Scalo S. Lorenzo, 82, 00159 Roma RM</li>
+          <li>Contatti: info@IgeaProject.it </li>
+          <li>Telefono: +39 351 8460 117</li>
+           <div class="maps">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6590.090684370046!2d12.512784856037571!3d41.90014442559066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6184e01c3111%3A0x4bec550a1e258da0!2sDipartimento%20ISO%20-%20Sapienza%20Universit%C3%A0%20di%20Roma!5e0!3m2!1sit!2sit!4v1683116438927!5m2!1sit!2sit" width="inherit" height="inherit" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+           </div>
+        </div >
+    
+        <div class="social">
+        <p>Scoprici sui social: </p>
+          <div class="socialLink">
+            <img class="socialPic" src="./src/instalogo.jpg" onclick="" >
+            <img class="socialPic" src="./src/Facebook_logo.jpg" onclick="" >
+            <img class="socialPic" src="./src/tiktok_logo.jpg" onclick="" >
+          </div>
+    
+        </div>
+      </footer>
   </body>
 </html>
