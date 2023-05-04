@@ -19,3 +19,7 @@
     font-weight: 700;
     font-size: large;
 }
+
+#navbarNavDropdown{
+    flex-grow: 0;
+}
