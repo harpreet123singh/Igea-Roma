@@ -1,25 +1,43 @@
 <html>
 <head>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>Registrazione</title>
+  <link rel="icon" type="./src/Igea_Project.png" href="./src/Igea_Project_2.png">
 
-    <script type="text/javascript" language="javascript">
-        function validaPassword() {
-            if (document.registrazione.password.value==document.registrazione.conferma_password.value){
-                return true;
-            }
-            alert("Il campo Conferma_Password non è corretto");
-            return false;
+  <script type="text/javascript" language="javascript">
+    function validaPassword() {
+        if (document.registrazione.password.value==document.registrazione.conferma_password.value){
+          return true;
         }
-    </script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <link href="./volontario.css" rel="stylesheet">
-    <link rel="stylesheet" href="navbar.css">
+
+        document.body.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+        document.getElementById('launchModal').click();
+        return false;
+    }
+
+    function switchPswVisibility(){
+      document.querySelector('#password').type == 'password'? document.querySelector('#password').type = 'text' : document.querySelector('#password').type = 'password';
+      document.querySelector('#conferma_password').type == 'password'? document.querySelector('#conferma_password').type = 'text' : document.querySelector('#conferma_password').type = 'password';
+      if(document.querySelector('#password').type == 'text')
+        document.getElementById('password_visibility').innerHTML = 'O';
+      else
+        document.getElementById('password_visibility').innerHTML = '&#128065;';
+    }
+  </script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <link href="./volontario.css" rel="stylesheet">
+  <link rel="stylesheet" href="navbar.css">
 </head>
 
 <body>
-    <header> <link rel="stylesheet" href="volontario.css">
-       
-        <nav class="navbar bg-body-tertiary" id="igea-navbar">
+    <header>
+        <nav class="navbar navbar-expand-lg" id="igea-navbar"><!--class="navbar bg-body-tertiary"-->
             <div class="container-fluid">
               <a class="navbar-brand" href="#">
                 <img src="./src/Igea_Project_2.png" alt="Logo" width="75" height="75" class="d-inline-block align-text-center">
@@ -37,7 +55,7 @@
                     <a class="nav-link" href="#">La nostra Visione</a>
                   </li>
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Segnalazioni
                     </a>
                     <ul class="dropdown-menu">
@@ -46,10 +64,10 @@
                     </ul>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: green">Diventa Volontario</a>
+                    <a class="nav-link active" href="#" style="color: green">Diventa Volontario</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: green">Login</a>
+                    <a class="nav-link" href="login.html" style="color: green">Login</a>
                   </li>
                 </ul>
               </div>
@@ -57,12 +75,14 @@
           </nav>
     </header>
 
+
+  
     <section>
         <div class="card">
             <div class="card-body">
                 <h2><b>Diventa un volontario</b></h2>
                 <p><em>Se vuoi diventare un volontario e aiutare a gestire le emergenze a Roma, compila il modulo qui sotto:</em></p>
-                <form method="post" name="registrazione">
+                <form name="registrazione">
                     <div class="inlineInput">
                         
                         <div class="form-floating">
@@ -105,20 +125,22 @@
                         </div>
                     </div>
 
-                    <div class="inlineInput">
+                    <div class="inlineInput" style="gap: 0%">
 
-                        <div class="form-floating">
+                        <div class="form-floating" style="min-width: 45%;">
                             <input type="password" class="form-control" id="password" name="password" placeholder="password" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}" >
                             <label for="password">Password</label>
                         </div>
 
-                        <div class="form-floating">
+                        <button id="password_visibility" type="button" onclick="switchPswVisibility()" style="width: 10%; background-color: transparent; border: none; color: black; font-size: x-large; margin-bottom: .8em">&#128065;</button>
+
+                        <div class="form-floating" style="min-width: 45%;">
                             <input type="password" class="form-control" id="conferma_password" name="conferma_password" placeholder="conferma_password" required>
                             <label for="conferma_password">Conferma password</label>
                         </div>
                     </div>
                     <div id="passwordHelpBlock" class="form-text">
-                        La password deve contenere dagli 8 ai 16 caratteri,con almeno una lettera minuscola e una maiuscola,un numero e un carattere speciale
+                      La password deve contenere dagli 8 ai 16 caratteri, con almeno una lettera minuscola e una maiuscola, un numero e un carattere speciale
                     </div>
 
                     <!--
@@ -127,7 +149,7 @@
                         <label for="disponibilita">Disponibilit&agrave; settimanale</label>
                     </div>-->
 
-                    <button type="submit" class="btn btn-primary" onclick="validaPassword()"> Invia richiesta</button>
+                    <button type="submit" class="btn btn-primary" onclick="return validaPassword()"> Invia richiesta</button>
                     <br>
                     <p>Sei gia registrato? <a href="login.html" style="color:green">Accedi</a></p>
                     
@@ -135,6 +157,30 @@
             </div>
           </div>
     </section>
+
+
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#confirmModal" style="display: none" id="launchModal">
+      Launch modal
+    </button>
+            
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false" >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="confirmModalLabel">Attenzione</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="confirmModalBody">
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="modalCloseButton" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: gray;">Chiudi</button>
+            <button type="button" id="modalConfirmButton" class="btn btn-primary">Conferma</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <footer>
       <link rel="stylesheet" href="footer.css">
