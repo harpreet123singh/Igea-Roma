@@ -1,0 +1,70 @@
+footer {
+    background-color: #244244;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    min-width: 100%;
+  }
+  
+  footer div {
+    width: 50%;
+    justify-content: center;
+  }
+  
+  .socialLink{
+    gap: 1.5em;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .social{
+    font-size: 120%;
+    display:flex ;
+    flex-direction: row;
+    float: right;
+    align-items: center;
+  }
+  
+  .social p{
+    margin: 0 1em;
+  }
+  
+  .socialPic{
+    flex-direction: row;
+    width: 3em;
+    height: 3em;
+  }
+  
+  .contatti{
+    margin: 1em;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .maps{
+    margin-top: 1em;
+  width: 100%;
+  }
+
+
+  
+  @media (max-width: 992px){
+  footer{
+    flex-direction: column;
+  }
+  .contatti{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .social{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 2em;
+  }
+  .socialPic{
+    width: 2em;
+    height: 2em;
+  }
+}
