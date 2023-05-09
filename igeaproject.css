@@ -1,58 +1,334 @@
-body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  color: #333;
-  background-color: #fff;
+.card{
+  height: 28em;
+  text-align: center; 
+  align-content: center;
+  margin: 5em auto;
+  background-color: #f7f7f7e6;
+  border-width: .5em;
+  border-color: #244244;
+  flex-direction: row;
+  background: rgb(209,255,205);
+  background: linear-gradient(0deg, rgba(209,255,205,1) 0%, rgba(255,255,255,1) 100%, rgba(0,212,255,1) 100%);
 }
 
-header {
-  background-color: #000;
-  color: #fff;
-  padding: 20px;
+/* card 1 */
+
+.chisiamo{
+width: 100%;
+text-decoration: dashed;
 }
 
-nav ul {
-  list-style: none;
+.im1 {
+display: flex;
+align-items: center;
+text-align: center;
+justify-content: center;
+margin:1em;
+width: 100%;
+background-image: url("./src/image1.jpg");
+background-position: center;
+background-size: 100%;
+}
+.im1:hover{
+  animation-name: enlargeCover;
+  animation-duration: 1s;
+  background-size: 120%;
+}
+@keyframes enlargeCover {
+  from {  background-size: 100%;}
+  to {  background-size: 120%;}
+}
+
+.im1_hover{
+  opacity: 0;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.626);
+  width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  margin: 0 10px;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav label {
-  color: #dbc7c7;
-  margin-right: 10px;
-}
-
-nav select {
-  padding: 5px;
-  border-radius: 5px;
-}
-
-main section {
-  padding: 20px;
-  margin: 20px;
-  border: 1px solid #ccc;
-}
-
-main h1, main h2 {
   text-align: center;
+  justify-content: center;
+  align-items: center;
 }
+
+.im1_hover a{
+  width: inherit;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.im1:hover > .im1_hover{
+  animation-name: unFade;
+  animation-duration: .5s;
+  opacity: 100;
+}
+
+:not(.im1:hover) > .im1_hover{
+  animation-name: fade;
+  animation-duration: .5s;
+  opacity: 0;
+}
+
+@keyframes unFade{
+  from{opacity: 0;}
+  to{opacity: 100;}
+}
+
+
+@keyframes fade{
+  from{opacity: 100;}
+  to{opacity: 0;}
+}
+/* card 2 */
+
+.im2 {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin:1em;
+  width: 100%;
+  background-image: url("./src/image2.jpg");
+  background-position: center;
+  background-size: 100%;
+  }
+  .im2:hover{
+    animation-name: enlargeCover;
+    animation-duration: 1s;
+    background-size: 120%;
+  }
+  
+  .im2_hover{
+    opacity: 0;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.626);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .im2_hover a{
+    width: inherit;
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  .im2:hover > .im2_hover{
+    animation-name: unFade;
+    animation-duration: .5s;
+    opacity: 100;
+  }
+  
+  :not(.im2:hover) > .im2_hover{
+    animation-name: fade;
+    animation-duration: .5s;
+    opacity: 0;
+  }
+
+  .lanostramissione {
+    width: 100%;
+    text-decoration: dashed;
+    }
+
+/* card 3 */
+
+.im3 {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin:1em;
+  width: 100%;
+  background-image: url("./src/image3.jpg");
+  background-position: center;
+  background-size: 100%;
+  }
+  .im3:hover{
+    animation-name: enlargeCover;
+    animation-duration: 1s;
+    background-size: 120%;
+  }
+  
+  .im3_hover{
+    opacity: 0;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.626);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .im3_hover a{
+    width: inherit;
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  .im3:hover > .im3_hover{
+    animation-name: unFade;
+    animation-duration: .5s;
+    opacity: 100;
+  }
+  
+  :not(.im3:hover) > .im3_hover{
+    animation-name: fade;
+    animation-duration: .5s;
+    opacity: 0;
+  }
+  .comefunziona {
+    width: 100%;
+    text-decoration: dashed;
+    }
+
+.tabs{
+  display: flex;
+flex-direction: row;
+}
+.tabs .card{
+  width: 25%;
+}
+.tabs .card-body{
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+
+.carousel-item{
+  max-height: 90vh;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(1, 1);
+  }
+  to {
+    -webkit-transform: scale(1.5, 1.5);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(1.5, 1.5);
+  }
+}
+
+.carousel-item > img {
+  -webkit-animation: zoom 30s;
+  animation: zoom 30s;
+}
+
+@media (max-width: 992px){
+  .card{
+      flex-direction: column;
+  }
+}
+
+
+/* footer */
 
 footer {
-  background-color: #000;
-  color: #fff;
-  padding: 20px;
+  background-color: #244244;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  min-width: 100%;
+}
+
+footer div {
+  width: 50%;
+  justify-content: center;
+}
+
+.socialLink{
+  gap: 1.5em;
+  display: flex;
+  flex-direction: row;
+}
+
+.social{
+  font-size: 120%;
+  display:flex ;
+  flex-direction: row;
+  float: right;
+  align-items: center;
+}
+
+.social p{
+  margin: 0 1em;
+}
+
+.socialPic{
+  flex-direction: row;
+  width: 3em;
+  height: 3em;
+}
+
+.contatti{
+  margin: 1em;
   text-align: center;
+  justify-content: center;
+}
+
+.maps{
+  margin-top: 1em;
+width: 100%;
+}
+
+
+/* design mobile */
+
+@media (max-width: 992px){
+  .card{
+    align-items: center;
+    margin: 2em 1em;
+    height: fit-content;
+  }
+  .im1, .im1_hover{
+    height: 10em;
+    width: 90%;
+  }
+  .im2, .im2_hover{
+    height: 10em;
+    width: 90%;
+  }
+  .im3, .im3_hover{
+    height: 10em;
+    width: 90%;
+  }
+  .tabs{
+    flex-direction: column;
+  }
+  .tabs .card{
+    align-items: center;
+    margin: 2em 1em;
+    width: 92%;
+  }
+  footer{
+    flex-direction: column;
+  }
+  .contatti{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .social{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 2em;
+  }
+  .socialPic{
+    width: 2em;
+    height: 2em;
+  }
 }
